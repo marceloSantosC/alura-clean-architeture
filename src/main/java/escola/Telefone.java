@@ -1,9 +1,12 @@
 package escola;
 
+import lombok.Getter;
+
 import java.util.Objects;
 
 
 // Só pode ser identificado por meio de todos atributos e por isso é um value object
+@Getter
 public class Telefone {
 
     private static final String REGEX_DDD = "[0-9]{2}";
