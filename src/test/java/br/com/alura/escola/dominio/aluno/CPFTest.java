@@ -1,7 +1,6 @@
-package escola;
+package br.com.alura.escola.dominio.aluno;
 
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +10,7 @@ public class CPFTest {
 
     @Test
     void nao_deve_instaciar_cpf_com_valor_invalido() {
-        assertThrows(IllegalArgumentException.class, () -> new CPF(null));
+        assertThrows(NullPointerException.class, () -> new CPF(null));
 
         assertThrows(IllegalArgumentException.class, () -> new CPF(""));
 

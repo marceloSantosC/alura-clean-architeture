@@ -1,4 +1,6 @@
-package escola;
+package br.com.alura.escola.dominio.aluno;
+
+import java.util.Objects;
 
 public class CPF {
 
@@ -8,7 +10,7 @@ public class CPF {
 
     public CPF(String valor) {
 
-        valor = valor.replace(".", "").replace("-", "");
+        valor = Objects.requireNonNull(valor).replace(".", "").replace("-", "");
 
         if (isInvalido(valor)) {
             throw new IllegalArgumentException("CPF inválido");

@@ -1,6 +1,5 @@
-package escola;
+package br.com.alura.escola.dominio.aluno;
 
-import lombok.Builder;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -8,7 +7,6 @@ import java.util.List;
 
 // É uma entidade pois tem um Identificador (o CPF)
 @Data
-@Builder
 public class Aluno {
 
     private CPF cpf;
