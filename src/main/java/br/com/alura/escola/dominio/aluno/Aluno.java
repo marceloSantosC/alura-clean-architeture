@@ -6,27 +6,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 // É uma entidade pois tem um Identificador (o CPF)
-@Data
 public class Aluno {
 
-    private CPF cpf;
-    private String nome;
-    private Email email;
-    private List<Telefone> telefones;
+    private final CPF cpf;
+    private final String nome;
+    private final Email email;
+    private final List<Telefone> telefones;
+    private final String senha;
 
-    private Aluno(CPF cpf, String nome, Email email) {
+    public Aluno(CPF cpf, String nome, Email email, String senha) {
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
+        this.senha = senha;
         this.telefones = new ArrayList<>();
     }
 
-    public static Aluno comNomeCPFEmail(String nome, CPF cpf, Email email) {
-        return new Aluno(cpf, nome, email);
+    public String getCpf() {
+        return cpf.toString();
     }
 
-    public void adicionarTelefone(String ddd, String numero) {
-        telefones.add(new Telefone(ddd, numero));
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email.toString();
+    }
+
+    public List<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void adicionarTelefone(Telefone telefone) {
+        telefones.add(telefone);
     }
 
 }
